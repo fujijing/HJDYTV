@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HJDouYuDemo
 //
-//  Created by 黄静静 on 16/9/18.
+//  Created by Revive on 16/9/18.
 //  Copyright © 2016年 HJing. All rights reserved.
 //
 
