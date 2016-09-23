@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F119F461D93C34700B2AED5 /* UIBarButtonItem-Extension.swift */; };
+		3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */; };
+		3F149E621D950571001122F7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E611D950571001122F7 /* Common.swift */; };
 		3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FAC961D8FBA700030D493 /* MainViewController.swift */; };
 		3F2FACA51D8FC8AE0030D493 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACA41D8FC8AE0030D493 /* Home.storyboard */; };
 		3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FACA61D8FC8DE0030D493 /* HomeViewController.swift */; };
@@ -33,7 +35,9 @@
 
 /* Begin PBXFileReference section */
 		3F119F461D93C34700B2AED5 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
-		3F2FAC961D8FBA700030D493 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJPageTitleView.swift; sourceTree = "<group>"; };
+		3F149E611D950571001122F7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		3F2FAC961D8FBA700030D493 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../MainViewController.swift; sourceTree = "<group>"; };
 		3F2FACA41D8FC8AE0030D493 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../View/Home.storyboard; sourceTree = "<group>"; };
 		3F2FACA61D8FC8DE0030D493 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../View/HomeViewController.swift; sourceTree = "<group>"; };
 		3F2FACA81D8FCB560030D493 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = ../View/Live.storyboard; sourceTree = "<group>"; };
@@ -76,9 +80,44 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		3F149E5B1D94C807001122F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3F149E5C1D94C807001122F7 /* Controller */,
+				3F149E5D1D94C807001122F7 /* Model */,
+				3F149E5E1D94C807001122F7 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3F149E5C1D94C807001122F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F2FAC961D8FBA700030D493 /* MainViewController.swift */,
+				3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F149E5D1D94C807001122F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F149E5E1D94C807001122F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3F2FAC901D8F93530030D493 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3F149E5B1D94C807001122F7 /* Main */,
 				3F2FAC911D8F93530030D493 /* Follow */,
 				3F2FAC921D8F93530030D493 /* Home */,
 				3F2FAC931D8F93530030D493 /* Live */,
@@ -130,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3F119F431D93BC6600B2AED5 /* Extension */,
+				3F149E611D950571001122F7 /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -224,8 +264,6 @@
 			children = (
 				3F2FAC901D8F93530030D493 /* Classes */,
 				3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */,
-				3F2FAC961D8FBA700030D493 /* MainViewController.swift */,
-				3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */,
 				3FF52B801D8E7CF900F1EC90 /* Assets.xcassets */,
 				3FF52B821D8E7CF900F1EC90 /* LaunchScreen.storyboard */,
 				3FF52B851D8E7CF900F1EC90 /* Info.plist */,
@@ -352,6 +390,8 @@
 				3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */,
 				3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */,
 				3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */,
+				3F149E621D950571001122F7 /* Common.swift in Sources */,
+				3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +420,7 @@
 				3FF52B7E1D8E7CF900F1EC90 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		3FF52B821D8E7CF900F1EC90 /* LaunchScreen.storyboard */ = {

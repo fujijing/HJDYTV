@@ -8,7 +8,16 @@
 
 import UIKit
 
+private let HJTitleViewH: CGFloat = 40
+
 class HomeViewController: UIViewController {
+    
+    private lazy var pageTitleView: HJPageTitleView = {
+        let titleFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH, width: HJScreenW, height: HJTitleViewH)
+        let titleItems = ["推荐", "游戏", "娱乐", "趣玩"]
+        let titleView = HJPageTitleView(frame: titleFrame, titles: titleItems)
+        return titleView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +34,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController{
     
     private func setUIElements(){
+        
+        automaticallyAdjustsScrollViewInsets = false
+        
         //1、setup navigationBar
         setNavigationBar()
+        
+        //2、 add TitleView
+        view.addSubview(pageTitleView)
     }
     
     private func setNavigationBar(){
