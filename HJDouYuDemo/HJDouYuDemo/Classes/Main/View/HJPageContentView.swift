@@ -104,11 +104,29 @@ extension HJPageContentView: UICollectionViewDelegate{
         if currentOffsetX > startOffsetX {
             // scroll left
             progress = currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW)
+            
+            currentIndex = Int(currentOffsetX / scrollViewW)
+            
+            targetIndex = currentIndex + 1
+            if targetIndex >= childVCs.count {
+                targetIndex = childVCs.count - 1
+            }
+            
+            //完全划过去
+            if currentOffsetX - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = currentIndex
+            }
+        }else{
+            progress = 1 - (currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW))
+            
+            targetIndex = Int(currentOffsetX / scrollViewW)
+            
+            currentIndex = targetIndex + 1
+            if currentIndex >= childVCs.count {
+                currentIndex = childVCs.count - 1
+            }
         }
-        
-        
-        
-        
         
     }
 }
