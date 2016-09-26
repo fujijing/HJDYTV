@@ -16,7 +16,24 @@ class HomeViewController: UIViewController {
         let titleFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH, width: HJScreenW, height: HJTitleViewH)
         let titleItems = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = HJPageTitleView(frame: titleFrame, titles: titleItems)
+        titleView.delegate = self
         return titleView
+    }()
+    
+    private lazy var pageContentView: HJPageContentView = {
+        let contentH = HJScreenH - HJStatusBarH - HJNavigationBarH - HJTitleViewH
+        let contentFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH + HJTitleViewH, width: HJScreenW, height: contentH)
+        
+        var childVCs = [UIViewController]()
+        for _ in 0..<4{
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+            childVCs.append(vc)
+        }
+        
+        let pageContentView = HJPageContentView(frame: contentFrame, childVCs:childVCs, parentViewController: self)
+        pageContentView.delegate = self
+        return pageContentView
     }()
 
     override func viewDidLoad() {
@@ -42,6 +59,9 @@ extension HomeViewController{
         
         //2、 add TitleView
         view.addSubview(pageTitleView)
+        
+        //3、 add pageContentView
+        view.addSubview(pageContentView)
     }
     
     private func setNavigationBar(){
@@ -56,5 +76,18 @@ extension HomeViewController{
         let qrcode = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
         navigationItem.rightBarButtonItems = [qrcode, searchItem, history];
         
+    }
+}
+
+extension HomeViewController: pageContentDelegate {
+    func pageContentViewScrollDetial(contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int) {
+        //set titleView 
+        pageTitleView.changeTitleViewWithProgress(progress, sourceIndex: currentIndex, targetIndex: targetIndex)
+    }
+}
+
+extension HomeViewController: HJPageTitleViewDelegate {
+    func pageTitleViewChange(titleView: HJPageTitleView, selectedIndex: Int) {
+        pageContentView.contentViewChange(selectedIndex)
     }
 }

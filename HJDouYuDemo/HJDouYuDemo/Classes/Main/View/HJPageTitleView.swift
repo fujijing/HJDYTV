@@ -13,11 +13,16 @@ private let HJScrollLineH: CGFloat = 2
 private let HJNormalColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
 private let HJSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 
+protocol HJPageTitleViewDelegate: class {
+    func pageTitleViewChange(titleView: HJPageTitleView, selectedIndex: Int)
+}
+
 
 class HJPageTitleView: UIView {
     
     private var currentIndex: Int = 0
     private var titles: [String]
+    weak var delegate: HJPageTitleViewDelegate?
     
     // lazy initialization
     private lazy var titleLabels: [UILabel] = [UILabel]()
@@ -136,10 +141,30 @@ extension HJPageTitleView{
         // change the position of the scroll line
         let scrollLineX: CGFloat = CGFloat(currentIndex) * currentLabel.frame.width
         scrollLine.frame.origin.x = scrollLineX;
+        
+        delegate?.pageTitleViewChange(self, selectedIndex: currentIndex)
     }
 }
 
 
+extension HJPageTitleView{
+    func changeTitleViewWithProgress(progress: CGFloat, sourceIndex: Int, targetIndex: Int){
+        
+        let currentLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        let distance = targetLabel.frame.origin.x - currentLabel.frame.origin.x 
+        scrollLine.frame.origin.x = currentLabel.frame.origin.x + distance * progress
+        
+        // the scope of the color change
+        let  colorScope = (HJSelectColor.0 - HJNormalColor.0, HJSelectColor.1 - HJNormalColor.1, HJSelectColor.2 - HJNormalColor.2)
+        
+        currentLabel.textColor = UIColor(red: (HJSelectColor.0  - colorScope.0 * progress ) / 255.0, green: (HJSelectColor.1 - colorScope.1 * progress) / 255.0, blue: ( HJSelectColor.2 - colorScope.2 * progress) / 255.0, alpha: 1.0)
+        targetLabel.textColor = UIColor(red: (HJNormalColor.0  + colorScope.0 * progress ) / 255.0, green: (HJNormalColor.1  + colorScope.1 * progress ) / 255.0, blue: (HJNormalColor.2  + colorScope.2 * progress ) / 255.0, alpha: 1.0)
+        
+        currentIndex = targetIndex
+    }
+}
 
 
 

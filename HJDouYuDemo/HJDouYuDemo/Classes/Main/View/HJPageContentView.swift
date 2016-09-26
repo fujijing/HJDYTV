@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol pageContentDelegate: class {
+    func pageContentViewScrollDetial(contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int)
+}
+
 private let contentCellID = "ContentCellID"
 
 class HJPageContentView: UIView {
@@ -16,6 +20,7 @@ class HJPageContentView: UIView {
     private weak var parentViewController: UIViewController?
     private var startOffsetX: CGFloat = 0
     private var isForbidScrollDelegate: Bool = false
+    weak var delegate: pageContentDelegate?
     
     private lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
@@ -101,6 +106,9 @@ extension HJPageContentView: UICollectionViewDelegate{
         let currentOffsetX = scrollView.contentOffset.x
         let scrollViewW = scrollView.bounds.width
         
+//        print("\(scrollView.contentOffset.x)")
+//        print("=========\(startOffsetX)")
+        
         if currentOffsetX > startOffsetX {
             // scroll left
             progress = currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW)
@@ -128,5 +136,16 @@ extension HJPageContentView: UICollectionViewDelegate{
             }
         }
         
+        delegate?.pageContentViewScrollDetial(self, progress: progress, currentIndex: currentIndex, targetIndex: targetIndex)
+    }
+}
+
+extension HJPageContentView{
+    func  contentViewChange(currentIndex: Int){
+        
+        isForbidScrollDelegate = true
+        
+        let offsetX = collectionView.frame.width * CGFloat(currentIndex)
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
 }
