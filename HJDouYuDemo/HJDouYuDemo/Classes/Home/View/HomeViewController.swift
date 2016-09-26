@@ -15,7 +15,8 @@ class HomeViewController: UIViewController {
     private lazy var pageTitleView: HJPageTitleView = {
         let titleFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH, width: HJScreenW, height: HJTitleViewH)
         let titleItems = ["推荐", "游戏", "娱乐", "趣玩"]
-        let titleView = HJPageTitleView(frame: titleFrame, titles: titleItems)
+        let displayTitlecount = 3
+        let titleView = HJPageTitleView(frame: titleFrame, titles: titleItems, displayTitleCount: displayTitlecount)
         titleView.delegate = self
         return titleView
     }()

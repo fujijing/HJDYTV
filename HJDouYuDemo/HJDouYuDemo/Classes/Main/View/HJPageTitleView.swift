@@ -22,6 +22,9 @@ class HJPageTitleView: UIView {
     
     private var currentIndex: Int = 0
     private var titles: [String]
+    
+    // parameter displayTitleCount means the number of title in the screen, not contain the hidden title
+    private var displayTitleCount: Int = 0
     weak var delegate: HJPageTitleViewDelegate?
     
     // lazy initialization
@@ -50,6 +53,16 @@ class HJPageTitleView: UIView {
         setupUIElements()
     }
     
+    //custom init
+    init(frame: CGRect, titles: [String], displayTitleCount: Int) {
+        self.titles = titles
+        self.displayTitleCount = displayTitleCount
+        super.init(frame: frame)
+        
+        //setup UI elements
+        setupUIElements()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -64,6 +77,7 @@ extension HJPageTitleView{
         //1、add scrollView
         addSubview(scrollView)
         scrollView.frame = bounds
+        scrollView.contentSize = CGSize(width: (frame.width / CGFloat(displayTitleCount) * CGFloat(titles.count)), height: frame.height - HJScrollLineH)
         
         //2、 setup titles and add labels to the scrollView
         setTitleLabels()
@@ -76,7 +90,8 @@ extension HJPageTitleView{
     private func setTitleLabels() {
         
         let labelH: CGFloat = frame.height - HJScrollLineH
-        let labelW: CGFloat = frame.width / CGFloat(titles.count)
+        let count = displayTitleCount == 0 ? titles.count : displayTitleCount
+        let labelW: CGFloat = frame.width / CGFloat(count)
         let labelY: CGFloat = 0
         
         for (index, title) in titles.enumerate() {
@@ -155,6 +170,8 @@ extension HJPageTitleView{
         
         let distance = targetLabel.frame.origin.x - currentLabel.frame.origin.x 
         scrollLine.frame.origin.x = currentLabel.frame.origin.x + distance * progress
+        print("\(scrollView.contentOffset.x)")
+        scrollView.setContentOffset(CGPoint(x: frame.width / CGFloat(displayTitleCount) + scrollView.contentOffset.x, y: 0), animated: false)
         
         // the scope of the color change
         let  colorScope = (HJSelectColor.0 - HJNormalColor.0, HJSelectColor.1 - HJNormalColor.1, HJSelectColor.2 - HJNormalColor.2)
