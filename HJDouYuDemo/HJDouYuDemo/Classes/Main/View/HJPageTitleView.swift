@@ -170,8 +170,13 @@ extension HJPageTitleView{
         
         let distance = targetLabel.frame.origin.x - currentLabel.frame.origin.x 
         scrollLine.frame.origin.x = currentLabel.frame.origin.x + distance * progress
-        print("\(scrollView.contentOffset.x)")
-        scrollView.setContentOffset(CGPoint(x: frame.width / CGFloat(displayTitleCount) + scrollView.contentOffset.x, y: 0), animated: false)
+        if targetIndex > (displayTitleCount - 1) {
+            scrollView.setContentOffset(CGPoint(x: targetLabel.frame.size.width, y: 0), animated: false)
+        }
+        if scrollView.contentOffset.x > 0 && targetIndex < (displayTitleCount - 1){
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        }
+
         
         // the scope of the color change
         let  colorScope = (HJSelectColor.0 - HJNormalColor.0, HJSelectColor.1 - HJNormalColor.1, HJSelectColor.2 - HJNormalColor.2)
@@ -182,8 +187,6 @@ extension HJPageTitleView{
         currentIndex = targetIndex
     }
 }
-
-
 
 
 
