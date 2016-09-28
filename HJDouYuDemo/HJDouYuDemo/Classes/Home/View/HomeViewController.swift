@@ -12,21 +12,21 @@ private let HJTitleViewH: CGFloat = 40
 
 class HomeViewController: UIViewController {
     
-    private lazy var pageTitleView: HJPageTitleView = {
+    fileprivate lazy var pageTitleView: HJPageTitleView = {
         let titleFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH, width: HJScreenW, height: HJTitleViewH)
-        let titleItems = ["推荐", "游戏", "娱乐", "趣玩", "直播"]
-        let displayTitlecount = 4
+        let titleItems = ["推荐", "游戏", "娱乐", "趣玩"]
+        let displayTitlecount = 0
         let titleView = HJPageTitleView(frame: titleFrame, titles: titleItems, displayTitleCount: displayTitlecount)
         titleView.delegate = self
         return titleView
     }()
     
-    private lazy var pageContentView: HJPageContentView = {
+    fileprivate lazy var pageContentView: HJPageContentView = {
         let contentH = HJScreenH - HJStatusBarH - HJNavigationBarH - HJTitleViewH
         let contentFrame = CGRect(x: 0, y: HJStatusBarH + HJNavigationBarH + HJTitleViewH, width: HJScreenW, height: contentH)
         
         var childVCs = [UIViewController]()
-        for _ in 0..<5{
+        for _ in 0..<4{
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
             childVCs.append(vc)
@@ -43,15 +43,14 @@ class HomeViewController: UIViewController {
         //Setup UI elements
         setUIElements()
     }
-
-
+    
 }
 
 
 //pragma mark --UI Elements
 extension HomeViewController{
     
-    private func setUIElements(){
+    fileprivate func setUIElements(){
         
         automaticallyAdjustsScrollViewInsets = false
         
@@ -65,7 +64,7 @@ extension HomeViewController{
         view.addSubview(pageContentView)
     }
     
-    private func setNavigationBar(){
+    fileprivate func setNavigationBar(){
         
         // the left button
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo");
@@ -81,14 +80,14 @@ extension HomeViewController{
 }
 
 extension HomeViewController: pageContentDelegate {
-    func pageContentViewScrollDetial(contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int) {
+    func pageContentViewScrollDetial(_ contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int) {
         //set titleView 
         pageTitleView.changeTitleViewWithProgress(progress, sourceIndex: currentIndex, targetIndex: targetIndex)
     }
 }
 
 extension HomeViewController: HJPageTitleViewDelegate {
-    func pageTitleViewChange(titleView: HJPageTitleView, selectedIndex: Int) {
+    func pageTitleViewChange(_ titleView: HJPageTitleView, selectedIndex: Int) {
         pageContentView.contentViewChange(selectedIndex)
     }
 }

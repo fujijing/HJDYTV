@@ -12,8 +12,8 @@ let HJStatusBarH: CGFloat = 20
 let HJNavigationBarH: CGFloat = 44
 let HJTabbarH: CGFloat = 44
 
-let HJScreenW = UIScreen.mainScreen().bounds.width
-let HJScreenH = UIScreen.mainScreen().bounds.height
+let HJScreenW = UIScreen.main.bounds.width
+let HJScreenH = UIScreen.main.bounds.height
 
 
 

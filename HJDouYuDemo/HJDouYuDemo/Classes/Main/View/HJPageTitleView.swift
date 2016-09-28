@@ -14,31 +14,31 @@ private let HJNormalColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
 private let HJSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 
 protocol HJPageTitleViewDelegate: class {
-    func pageTitleViewChange(titleView: HJPageTitleView, selectedIndex: Int)
+    func pageTitleViewChange(_ titleView: HJPageTitleView, selectedIndex: Int)
 }
 
 
 class HJPageTitleView: UIView {
     
-    private var currentIndex: Int = 0
-    private var titles: [String]
+    fileprivate var currentIndex: Int = 0
+    fileprivate var titles: [String]
     
     // parameter displayTitleCount means the number of title in the screen, not contain the hidden title
-    private var displayTitleCount: Int = 0
+    fileprivate var displayTitleCount: Int = 0
     weak var delegate: HJPageTitleViewDelegate?
     
     // lazy initialization
-    private lazy var titleLabels: [UILabel] = [UILabel]()
-    private lazy var scrollView: UIScrollView = {
+    fileprivate lazy var titleLabels: [UILabel] = [UILabel]()
+    fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.scrollsToTop = false
         scrollView.bounces = false
         return scrollView
     }()
-    private lazy var scrollLine: UIView = {
+    fileprivate lazy var scrollLine: UIView = {
         let scrollLine = UIView()
-        scrollLine.backgroundColor = UIColor.orangeColor()
+        scrollLine.backgroundColor = UIColor.orange
         return scrollLine
     }()
     
@@ -72,12 +72,16 @@ class HJPageTitleView: UIView {
 
 // pragma mark -- setup UI elements
 extension HJPageTitleView{
-    private func setupUIElements(){
+    fileprivate func setupUIElements(){
         
         //1、add scrollView
         addSubview(scrollView)
         scrollView.frame = bounds
-        scrollView.contentSize = CGSize(width: (frame.width / CGFloat(displayTitleCount) * CGFloat(titles.count)), height: frame.height - HJScrollLineH)
+        
+        // if the title number is more than the displayTitileCount, should set the contentSize of the scrollView
+        if displayTitleCount != 0 {
+            scrollView.contentSize = CGSize(width: (frame.width / CGFloat(displayTitleCount) * CGFloat(titles.count)), height: frame.height - HJScrollLineH)
+        }
         
         //2、 setup titles and add labels to the scrollView
         setTitleLabels()
@@ -87,21 +91,21 @@ extension HJPageTitleView{
         
     }
     
-    private func setTitleLabels() {
+    fileprivate func setTitleLabels() {
         
         let labelH: CGFloat = frame.height - HJScrollLineH
         let count = displayTitleCount == 0 ? titles.count : displayTitleCount
         let labelW: CGFloat = frame.width / CGFloat(count)
         let labelY: CGFloat = 0
         
-        for (index, title) in titles.enumerate() {
+        for (index, title) in titles.enumerated() {
             
             let label = UILabel()
             label.text = title
             label.tag = index
-            label.font = UIFont.systemFontOfSize(16.0)
+            label.font = UIFont.systemFont(ofSize: 16.0)
             label.textColor = UIColor(red: HJNormalColor.0 / 255.0, green: HJNormalColor.1 / 255.0, blue: HJNormalColor.2 / 255.0, alpha: 1.0)
-            label.textAlignment = .Center
+            label.textAlignment = .center
             
             let labelX: CGFloat = labelW * CGFloat(index)
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
@@ -110,19 +114,19 @@ extension HJPageTitleView{
             titleLabels.append(label)
             
             // add gesture to the label
-            label.userInteractionEnabled = true
+            label.isUserInteractionEnabled = true
             let  gesture = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(_:)))
             label.addGestureRecognizer(gesture)
             
         }
     }
     
-    private func setupBottomLineAndScrollLine() {
+    fileprivate func setupBottomLineAndScrollLine() {
         // add bottom line
         let bottomLine = UIView()
         let lineH: CGFloat = 0.5
         bottomLine.frame = CGRect(x: 0, y: frame.height - lineH, width: frame.width, height: lineH)
-        bottomLine.backgroundColor = UIColor.lightGrayColor()
+        bottomLine.backgroundColor = UIColor.lightGray
         addSubview(bottomLine)
         
         // add scrollLine
@@ -132,12 +136,11 @@ extension HJPageTitleView{
         scrollView.addSubview(scrollLine)
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - HJScrollLineH, width: firstLabel.frame.width, height: HJScrollLineH)
         
-        
     }
 }
 
 extension HJPageTitleView{
-    @objc private func titleLabelClick(tapGes: UITapGestureRecognizer) {
+    @objc fileprivate func titleLabelClick(_ tapGes: UITapGestureRecognizer) {
         
         guard let currentLabel = tapGes.view as? UILabel else { return }
         
@@ -163,20 +166,22 @@ extension HJPageTitleView{
 
 
 extension HJPageTitleView{
-    func changeTitleViewWithProgress(progress: CGFloat, sourceIndex: Int, targetIndex: Int){
+    func changeTitleViewWithProgress(_ progress: CGFloat, sourceIndex: Int, targetIndex: Int){
         
         let currentLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]
         
         let distance = targetLabel.frame.origin.x - currentLabel.frame.origin.x 
         scrollLine.frame.origin.x = currentLabel.frame.origin.x + distance * progress
-        if targetIndex > (displayTitleCount - 1) {
-            scrollView.setContentOffset(CGPoint(x: targetLabel.frame.size.width, y: 0), animated: false)
+        if displayTitleCount != 0 {
+            if targetIndex > (displayTitleCount - 1) {
+                scrollView.setContentOffset(CGPoint(x: targetLabel.frame.size.width, y: 0), animated: false)
+            }
+            if scrollView.contentOffset.x > 0 && targetIndex < (displayTitleCount - 1){
+                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            }
         }
-        if scrollView.contentOffset.x > 0 && targetIndex < (displayTitleCount - 1){
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-        }
-
+        
         
         // the scope of the color change
         let  colorScope = (HJSelectColor.0 - HJNormalColor.0, HJSelectColor.1 - HJNormalColor.1, HJSelectColor.2 - HJNormalColor.2)

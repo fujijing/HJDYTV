@@ -11,18 +11,18 @@ import UIKit
 extension UIBarButtonItem{
     
     //便利构造函数
-    convenience init(imageName: String, highImageName: String = "", size: CGSize = CGSizeZero) {
+    convenience init(imageName: String, highImageName: String = "", size: CGSize = CGSize.zero) {
         
         let button = UIButton()
-        button.setImage(UIImage(named: imageName), forState: .Normal)
+        button.setImage(UIImage(named: imageName), for: UIControlState())
         if highImageName != "" {
-            button.setImage(UIImage(named: highImageName), forState: .Highlighted)
+            button.setImage(UIImage(named: highImageName), for: .highlighted)
         }
         
-        if size == CGSizeZero {
+        if size == CGSize.zero {
             button.sizeToFit()
         }else{
-            button.frame = CGRect(origin: CGPointZero, size: size)
+            button.frame = CGRect(origin: CGPoint.zero, size: size)
         }
         
         self.init(customView: button)

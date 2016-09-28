@@ -17,6 +17,7 @@
 		3F2FACA91D8FCB560030D493 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACA81D8FCB560030D493 /* Live.storyboard */; };
 		3F2FACAD1D8FCCFA0030D493 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACAC1D8FCCFA0030D493 /* Mine.storyboard */; };
 		3F2FACB11D8FCD320030D493 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACB01D8FCD320030D493 /* Follow.storyboard */; };
+		3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */; };
 		3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */; };
 		3FF52B7F1D8E7CF900F1EC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */; };
 		3FF52B811D8E7CF900F1EC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B801D8E7CF900F1EC90 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		3F2FACA81D8FCB560030D493 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = ../View/Live.storyboard; sourceTree = "<group>"; };
 		3F2FACAC1D8FCCFA0030D493 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Mine.storyboard; path = ../View/Mine.storyboard; sourceTree = "<group>"; };
 		3F2FACB01D8FCD320030D493 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
+		3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		3FF52B761D8E7CF900F1EC90 /* HJDouYuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJDouYuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF52B7E1D8E7CF900F1EC90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				3F2FACA41D8FC8AE0030D493 /* Home.storyboard */,
 				3F2FACA61D8FC8DE0030D493 /* HomeViewController.swift */,
+				3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,15 +331,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = HJing;
 				TargetAttributes = {
 					3FF52B751D8E7CF900F1EC90 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					3FF52B891D8E7CF900F1EC90 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = M86LWK3SGE;
+						LastSwiftMigration = 0800;
 						TestTargetID = 3FF52B751D8E7CF900F1EC90;
 					};
 				};
@@ -390,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */,
+				3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */,
 				3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */,
 				3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */,
 				3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */,
@@ -452,8 +458,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -497,8 +505,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -517,6 +527,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -532,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jing.HJDouYuDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -546,6 +558,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jing.HJDouYuDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -556,6 +569,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jing.HJDouYuDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = HJDouYuDemo;
 			};
 			name = Debug;
@@ -567,6 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jing.HJDouYuDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = HJDouYuDemo;
 			};
 			name = Release;

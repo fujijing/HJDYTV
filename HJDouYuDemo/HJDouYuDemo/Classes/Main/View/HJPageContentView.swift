@@ -9,34 +9,34 @@
 import UIKit
 
 protocol pageContentDelegate: class {
-    func pageContentViewScrollDetial(contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int)
+    func pageContentViewScrollDetial(_ contenView: HJPageContentView, progress: CGFloat, currentIndex: Int, targetIndex: Int)
 }
 
 private let contentCellID = "ContentCellID"
 
 class HJPageContentView: UIView {
     
-    private var childVCs: [UIViewController] = []
-    private weak var parentViewController: UIViewController?
-    private var startOffsetX: CGFloat = 0
-    private var isForbidScrollDelegate: Bool = false
+    fileprivate var childVCs: [UIViewController] = []
+    fileprivate weak var parentViewController: UIViewController?
+    fileprivate var startOffsetX: CGFloat = 0
+    fileprivate var isForbidScrollDelegate: Bool = false
     weak var delegate: pageContentDelegate?
     
-    private lazy var collectionView: UICollectionView = { [weak self] in
+    fileprivate lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .Horizontal
+        layout.scrollDirection = .horizontal
         layout.itemSize = (self?.bounds.size)!
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.pagingEnabled = true
+        collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.scrollsToTop = false
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
         return collectionView
     }()
     
@@ -56,7 +56,7 @@ class HJPageContentView: UIView {
 }
 
 extension HJPageContentView{
-    private func setUIElements() {
+    fileprivate func setUIElements() {
         //1、add all child controller to parent controller
         for childVC in childVCs {
             self.parentViewController?.addChildViewController(childVC)
@@ -70,18 +70,18 @@ extension HJPageContentView{
 
 
 extension HJPageContentView: UICollectionViewDataSource{
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return childVCs.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let  cell = collectionView.dequeueReusableCellWithReuseIdentifier(contentCellID, forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellID, for: indexPath)
         
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
         
-        let childVC = childVCs[indexPath.item]
+        let childVC = childVCs[(indexPath as NSIndexPath).item]
         childVC.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVC.view)
         
@@ -91,12 +91,12 @@ extension HJPageContentView: UICollectionViewDataSource{
 
 extension HJPageContentView: UICollectionViewDelegate{
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isForbidScrollDelegate = false
         startOffsetX = scrollView.contentOffset.x
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if isForbidScrollDelegate { return }
         
         var progress: CGFloat = 0
@@ -141,7 +141,7 @@ extension HJPageContentView: UICollectionViewDelegate{
 }
 
 extension HJPageContentView{
-    func  contentViewChange(currentIndex: Int){
+    func  contentViewChange(_ currentIndex: Int){
         
         isForbidScrollDelegate = true
         
