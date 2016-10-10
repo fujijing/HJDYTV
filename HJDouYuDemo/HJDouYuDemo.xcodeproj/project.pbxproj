@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0302A31DAB8AF7004CE976 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0302A11DAB8AF7004CE976 /* CollectionNormalCell.swift */; };
+		3F0302A41DAB8AF7004CE976 /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0302A21DAB8AF7004CE976 /* CollectionNormalCell.xib */; };
 		3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F119F461D93C34700B2AED5 /* UIBarButtonItem-Extension.swift */; };
 		3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */; };
 		3F149E621D950571001122F7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E611D950571001122F7 /* Common.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F0302A11DAB8AF7004CE976 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
+		3F0302A21DAB8AF7004CE976 /* CollectionNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
 		3F119F461D93C34700B2AED5 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJPageTitleView.swift; sourceTree = "<group>"; };
 		3F149E611D950571001122F7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */,
 				3F149E631D953CBE001122F7 /* HJPageContentView.swift */,
+				3F0302A11DAB8AF7004CE976 /* CollectionNormalCell.swift */,
+				3F0302A21DAB8AF7004CE976 /* CollectionNormalCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 			files = (
 				3FF52B841D8E7CF900F1EC90 /* LaunchScreen.storyboard in Resources */,
 				3FF52B811D8E7CF900F1EC90 /* Assets.xcassets in Resources */,
+				3F0302A41DAB8AF7004CE976 /* CollectionNormalCell.xib in Resources */,
 				3FF52B7F1D8E7CF900F1EC90 /* Main.storyboard in Resources */,
 				3F2FACAD1D8FCCFA0030D493 /* Mine.storyboard in Resources */,
 				3F2FACB11D8FCD320030D493 /* Follow.storyboard in Resources */,
@@ -405,6 +412,7 @@
 				3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */,
 				3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */,
 				3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */,
+				3F0302A31DAB8AF7004CE976 /* CollectionNormalCell.swift in Sources */,
 				3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */,
 				3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */,
 				3F149E621D950571001122F7 /* Common.swift in Sources */,

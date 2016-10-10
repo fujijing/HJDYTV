@@ -15,12 +15,13 @@ private let HJPrettyItemH: CGFloat = HJItemW * 4 / 3
 private let HJHeaderViewH: CGFloat = 50
 
 private let HJHeaderViewID = "HJHeaderViewID"
+private let HJNormalCellID = "HJNormalCellID"
 
 class RecommendViewController: UIViewController {
     
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: HJItemW, height: HJNormalItemH)
+        layout.itemSize = CGSize(width: HJItemW, height: 182)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = HJItemMargin
         layout.headerReferenceSize = CGSize(width: HJScreenW, height: HJHeaderViewH)
@@ -31,6 +32,8 @@ class RecommendViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"cell")
         collectionView.register(UINib(nibName: "RecommendHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HJHeaderViewID)
+        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier:HJNormalCellID)
+//        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         return collectionView
     }()
     
@@ -53,8 +56,7 @@ extension RecommendViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell" , for: indexPath)
-        cell.backgroundColor = UIColor.red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:HJNormalCellID , for: indexPath)
         return cell;
     }
     
@@ -63,6 +65,4 @@ extension RecommendViewController: UICollectionViewDataSource{
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HJHeaderViewID, for: indexPath)
         return headerView
     }
-    
-    
 }
