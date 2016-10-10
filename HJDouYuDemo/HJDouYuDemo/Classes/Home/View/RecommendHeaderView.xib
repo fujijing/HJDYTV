@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="RecommendHeaderView" customModule="HJDouYuDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-oE-BA3">
+                    <color key="backgroundColor" red="0.85897435899999997" green="0.85897435899999997" blue="0.85897435899999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="AJo-1s-dcf"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-kw-3ej">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="18" id="YN4-aC-RVe"/>
+                        <constraint firstAttribute="height" constant="18" id="eyn-JL-5Lb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oax-vq-pa4">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <color key="highlightedColor" red="0.85897435899999997" green="0.85897435899999997" blue="0.85897435899999997" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-hE-Jy5">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="5QB-Ev-mfO"/>
+                    </constraints>
+                    <state key="normal" title="更多 &gt;">
+                        <color key="titleColor" red="0.64389022439999999" green="0.64389022439999999" blue="0.64389022439999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ICc-oE-BA3" secondAttribute="trailing" id="2KR-tl-MZm"/>
+                <constraint firstItem="14e-hE-Jy5" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="ASk-PO-7gY" userLabel="更多 &gt;.centerY = 直播.centerY"/>
+                <constraint firstItem="oax-vq-pa4" firstAttribute="leading" secondItem="AVf-kw-3ej" secondAttribute="trailing" constant="15" id="Hcj-x2-6H8" userLabel="直播.leading = Image View.trailing + 5"/>
+                <constraint firstItem="AVf-kw-3ej" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="9" id="a79-CI-X67"/>
+                <constraint firstItem="AVf-kw-3ej" firstAttribute="top" secondItem="ICc-oE-BA3" secondAttribute="bottom" constant="8" symbolic="YES" id="gAs-uv-Na0" userLabel="Image View.top = View.bottom + 11"/>
+                <constraint firstItem="AVf-kw-3ej" firstAttribute="centerY" secondItem="oax-vq-pa4" secondAttribute="centerY" id="i9h-mB-qyd"/>
+                <constraint firstItem="ICc-oE-BA3" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="p0a-Ws-KD3"/>
+                <constraint firstItem="ICc-oE-BA3" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ulV-sh-87r"/>
+                <constraint firstAttribute="trailing" secondItem="14e-hE-Jy5" secondAttribute="trailing" constant="23" id="vXD-dP-gkl" userLabel="trailing = 更多 &gt;.trailing + 10"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="AVf-kw-3ej" id="HKR-cz-RuU"/>
+                <outlet property="titleLabel" destination="oax-vq-pa4" id="eHz-CP-n4e"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="10"/>
+        </collectionReusableView>
+    </objects>
+</document>

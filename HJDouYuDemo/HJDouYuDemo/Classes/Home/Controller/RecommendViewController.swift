@@ -14,26 +14,55 @@ private let HJNormalItemH: CGFloat = HJItemW * 3 / 4
 private let HJPrettyItemH: CGFloat = HJItemW * 4 / 3
 private let HJHeaderViewH: CGFloat = 50
 
+private let HJHeaderViewID = "HJHeaderViewID"
 
 class RecommendViewController: UIViewController {
     
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: HJItemW, height: HJNormalItemH)
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = HJItemMargin
         layout.headerReferenceSize = CGSize(width: HJScreenW, height: HJHeaderViewH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: HJItemMargin, bottom: 0, right: HJItemMargin)
         
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-//        collectionView.dataSource = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"cell")
+        collectionView.register(UINib(nibName: "RecommendHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HJHeaderViewID)
         return collectionView
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addSubview(collectionView)
     }
+}
+
+extension RecommendViewController: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 8
+        }
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell" , for: indexPath)
+        cell.backgroundColor = UIColor.red
+        return cell;
+    }
+    
+    // set the collectionHeaderView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HJHeaderViewID, for: indexPath)
+        return headerView
+    }
+    
+    
 }

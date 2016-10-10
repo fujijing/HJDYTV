@@ -27,8 +27,9 @@ class HomeViewController: UIViewController {
         
         var childVCs = [UIViewController]()
         for _ in 0..<4{
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+            let vc = RecommendViewController()
+//            vc.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+            vc.view.backgroundColor = UIColor.white
             childVCs.append(vc)
         }
         
