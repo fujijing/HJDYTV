@@ -21,12 +21,19 @@
 		3F2FACB11D8FCD320030D493 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACB01D8FCD320030D493 /* Follow.storyboard */; };
 		3F3203551DAA17220049B292 /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3203531DAA17220049B292 /* RecommendHeaderView.swift */; };
 		3F3203561DAA17220049B292 /* RecommendHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3203541DAA17220049B292 /* RecommendHeaderView.xib */; };
+		3F51495A1DAF61B1005BCA4B /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149591DAF61B1005BCA4B /* NetworkTools.swift */; };
+		3F5149621DAF7FE9005BCA4B /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149611DAF7FE9005BCA4B /* RecommendViewModel.swift */; };
+		3F5149641DAF80E3005BCA4B /* BaseGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149631DAF80E3005BCA4B /* BaseGameModel.swift */; };
+		3F5149661DAF850C005BCA4B /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149651DAF850C005BCA4B /* AnchorGroup.swift */; };
+		3F5149681DAF8606005BCA4B /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149671DAF8606005BCA4B /* AnchorModel.swift */; };
+		3F51496B1DAFA808005BCA4B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51496A1DAFA808005BCA4B /* BaseViewModel.swift */; };
 		3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */; };
 		3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */; };
 		3FF52B7F1D8E7CF900F1EC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */; };
 		3FF52B811D8E7CF900F1EC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B801D8E7CF900F1EC90 /* Assets.xcassets */; };
 		3FF52B841D8E7CF900F1EC90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B821D8E7CF900F1EC90 /* LaunchScreen.storyboard */; };
 		3FF52B8F1D8E7CF900F1EC90 /* HJDouYuDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF52B8E1D8E7CF900F1EC90 /* HJDouYuDemoUITests.swift */; };
+		95AD35EB4D59921619ADED12 /* Pods_HJDouYuDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8383605A3CA73FFBF586AD56 /* Pods_HJDouYuDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,14 @@
 		3F2FACB01D8FCD320030D493 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		3F3203531DAA17220049B292 /* RecommendHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
 		3F3203541DAA17220049B292 /* RecommendHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendHeaderView.xib; sourceTree = "<group>"; };
+		3F5149591DAF61B1005BCA4B /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		3F51495C1DAF66F3005BCA4B /* Pods_HJDouYuDemo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_HJDouYuDemo.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HJDouYuDemo-appexsmmejtwmtemaufqjnhxfoev/Build/Products/Debug-iphonesimulator/Pods_HJDouYuDemo.framework"; sourceTree = "<group>"; };
+		3F51495E1DAF691F005BCA4B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/HJDouYuDemo-appexsmmejtwmtemaufqjnhxfoev/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		3F5149611DAF7FE9005BCA4B /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		3F5149631DAF80E3005BCA4B /* BaseGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameModel.swift; sourceTree = "<group>"; };
+		3F5149651DAF850C005BCA4B /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		3F5149671DAF8606005BCA4B /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		3F51496A1DAFA808005BCA4B /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		3FF52B761D8E7CF900F1EC90 /* HJDouYuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJDouYuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +79,9 @@
 		3FF52B8A1D8E7CF900F1EC90 /* HJDouYuDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HJDouYuDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF52B8E1D8E7CF900F1EC90 /* HJDouYuDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HJDouYuDemoUITests.swift; sourceTree = "<group>"; };
 		3FF52B901D8E7CF900F1EC90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8383605A3CA73FFBF586AD56 /* Pods_HJDouYuDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJDouYuDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AD24B21628D5723BB6675E /* Pods-HJDouYuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJDouYuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJDouYuDemo/Pods-HJDouYuDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BC388F65EBAC13D0783663E9 /* Pods-HJDouYuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJDouYuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HJDouYuDemo/Pods-HJDouYuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AD35EB4D59921619ADED12 /* Pods_HJDouYuDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +114,7 @@
 		3F149E5B1D94C807001122F7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3F5149691DAFA7F2005BCA4B /* ViewModel */,
 				3F149E5C1D94C807001122F7 /* Controller */,
 				3F149E5D1D94C807001122F7 /* Model */,
 				3F149E5E1D94C807001122F7 /* View */,
@@ -114,6 +134,9 @@
 		3F149E5D1D94C807001122F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F5149631DAF80E3005BCA4B /* BaseGameModel.swift */,
+				3F5149651DAF850C005BCA4B /* AnchorGroup.swift */,
+				3F5149671DAF8606005BCA4B /* AnchorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +176,7 @@
 		3F2FAC921D8F93530030D493 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3F5149601DAF7DAF005BCA4B /* ViewModel */,
 				3F2FAC981D8FC8500030D493 /* Controller */,
 				3F2FAC991D8FC8500030D493 /* Model */,
 				3F2FAC9A1D8FC8500030D493 /* View */,
@@ -185,6 +209,7 @@
 			children = (
 				3F119F431D93BC6600B2AED5 /* Extension */,
 				3F149E611D950571001122F7 /* Common.swift */,
+				3F5149591DAF61B1005BCA4B /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -259,12 +284,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3F51495B1DAF66F3005BCA4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F51495E1DAF691F005BCA4B /* Alamofire.framework */,
+				3F51495C1DAF66F3005BCA4B /* Pods_HJDouYuDemo.framework */,
+				8383605A3CA73FFBF586AD56 /* Pods_HJDouYuDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F5149601DAF7DAF005BCA4B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F5149611DAF7FE9005BCA4B /* RecommendViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F5149691DAFA7F2005BCA4B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F51496A1DAFA808005BCA4B /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3FF52B6D1D8E7CF900F1EC90 = {
 			isa = PBXGroup;
 			children = (
 				3FF52B781D8E7CF900F1EC90 /* HJDouYuDemo */,
 				3FF52B8D1D8E7CF900F1EC90 /* HJDouYuDemoUITests */,
 				3FF52B771D8E7CF900F1EC90 /* Products */,
+				3F51495B1DAF66F3005BCA4B /* Frameworks */,
+				DA6C0B2C817183303FCE4FFB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +351,15 @@
 			path = HJDouYuDemoUITests;
 			sourceTree = "<group>";
 		};
+		DA6C0B2C817183303FCE4FFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC388F65EBAC13D0783663E9 /* Pods-HJDouYuDemo.debug.xcconfig */,
+				93AD24B21628D5723BB6675E /* Pods-HJDouYuDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,9 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FF52B931D8E7CF900F1EC90 /* Build configuration list for PBXNativeTarget "HJDouYuDemo" */;
 			buildPhases = (
+				22EAA3AEAF2F3D0FDD3D8DB9 /* [CP] Check Pods Manifest.lock */,
 				3FF52B721D8E7CF900F1EC90 /* Sources */,
 				3FF52B731D8E7CF900F1EC90 /* Frameworks */,
 				3FF52B741D8E7CF900F1EC90 /* Resources */,
+				1A87F3D24A6DB397D39B260A /* [CP] Embed Pods Frameworks */,
+				3A8B9F63145FA6C09F38F282 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,19 +468,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A87F3D24A6DB397D39B260A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HJDouYuDemo/Pods-HJDouYuDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22EAA3AEAF2F3D0FDD3D8DB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A8B9F63145FA6C09F38F282 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HJDouYuDemo/Pods-HJDouYuDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3FF52B721D8E7CF900F1EC90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F3203551DAA17220049B292 /* RecommendHeaderView.swift in Sources */,
+				3F5149681DAF8606005BCA4B /* AnchorModel.swift in Sources */,
+				3F5149621DAF7FE9005BCA4B /* RecommendViewModel.swift in Sources */,
+				3F51495A1DAF61B1005BCA4B /* NetworkTools.swift in Sources */,
 				3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */,
+				3F51496B1DAFA808005BCA4B /* BaseViewModel.swift in Sources */,
 				3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */,
 				3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */,
 				3F0302A31DAB8AF7004CE976 /* CollectionNormalCell.swift in Sources */,
 				3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */,
 				3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */,
 				3F149E621D950571001122F7 /* Common.swift in Sources */,
+				3F5149661DAF850C005BCA4B /* AnchorGroup.swift in Sources */,
+				3F5149641DAF80E3005BCA4B /* BaseGameModel.swift in Sources */,
 				3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */,
 				3F149E641D953CBE001122F7 /* HJPageContentView.swift in Sources */,
 			);
@@ -550,6 +669,7 @@
 		};
 		3FF52B941D8E7CF900F1EC90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC388F65EBAC13D0783663E9 /* Pods-HJDouYuDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -565,6 +685,7 @@
 		};
 		3FF52B951D8E7CF900F1EC90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93AD24B21628D5723BB6675E /* Pods-HJDouYuDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
