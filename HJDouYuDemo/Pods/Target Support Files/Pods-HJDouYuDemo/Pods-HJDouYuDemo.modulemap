@@ -1,0 +1,6 @@
+framework module Pods_HJDouYuDemo {
+  umbrella header "Pods-HJDouYuDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
