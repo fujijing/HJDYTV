@@ -15,6 +15,6 @@ class BaseViewModel: NSObject {
 
 extension BaseViewModel {
     func  loadAnchorData(URLString: String, parameters: [String: Any]? = nil, finishedCallback: @escaping () -> ()){
-        
+        NetworkTools.requestData(MethodType, URLString: <#T##String#>, parameters: <#T##[String : Any]?#>, finishedCallBack: <#T##(Any) -> ()#>)
     }
 }
