@@ -15,6 +15,16 @@ class BaseViewModel: NSObject {
 
 extension BaseViewModel {
     func  loadAnchorData(URLString: String, parameters: [String: Any]? = nil, finishedCallback: @escaping () -> ()){
-        NetworkTools.requestData(MethodType, URLString: <#T##String#>, parameters: <#T##[String : Any]?#>, finishedCallBack: <#T##(Any) -> ()#>)
+        NetworkTools.requestData(.get, URLString: URLString, parameters: parameters){
+            (result) in
+            guard let resultDict = result as? [String : Any] else {return}
+            guard let dataArray = resultDict["data"] as? [[String: Any]] else {return}
+            
+            for dict in dataArray{
+                self.anchorGroup.append(AnchorGroup(dict: dict))
+            }
+            
+            finishedCallback()
+        }
     }
 }
