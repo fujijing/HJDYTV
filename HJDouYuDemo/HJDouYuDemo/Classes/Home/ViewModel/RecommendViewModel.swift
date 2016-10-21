@@ -64,12 +64,12 @@ extension RecommendViewModel {
         }
         
         //得到所有数据之后对数据进行排序
-//        dGroup.notify(queue: DispatchQueue) {
-//            self.anchorGroup.insert(self.prettyDataGroup, at: 0)
-//            self.anchorGroup.insert(self.bigDataGroup, at: 0)
-//            
-//            finishCallback()
-//        }
+        dGroup.notify(queue: DispatchQueue.main) {
+            self.anchorGroup.insert(self.prettyDataGroup, at: 0)
+            self.anchorGroup.insert(self.bigDataGroup, at: 0)
+            
+            finishCallback()
+        }
         
     }
 }

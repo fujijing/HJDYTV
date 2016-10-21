@@ -14,6 +14,8 @@
 		3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */; };
 		3F149E621D950571001122F7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E611D950571001122F7 /* Common.swift */; };
 		3F149E641D953CBE001122F7 /* HJPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F149E631D953CBE001122F7 /* HJPageContentView.swift */; };
+		3F297C691DBA05E700F99CAA /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F297C681DBA05E700F99CAA /* BaseAnchorViewController.swift */; };
+		3F297C6B1DBA156000F99CAA /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F297C6A1DBA156000F99CAA /* CollectionBaseCell.swift */; };
 		3F2FAC971D8FBA700030D493 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FAC961D8FBA700030D493 /* MainViewController.swift */; };
 		3F2FACA51D8FC8AE0030D493 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2FACA41D8FC8AE0030D493 /* Home.storyboard */; };
 		3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FACA61D8FC8DE0030D493 /* HomeViewController.swift */; };
@@ -55,6 +57,8 @@
 		3F149E5F1D94C849001122F7 /* HJPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJPageTitleView.swift; sourceTree = "<group>"; };
 		3F149E611D950571001122F7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		3F149E631D953CBE001122F7 /* HJPageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJPageContentView.swift; sourceTree = "<group>"; };
+		3F297C681DBA05E700F99CAA /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
+		3F297C6A1DBA156000F99CAA /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
 		3F2FAC961D8FBA700030D493 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../MainViewController.swift; sourceTree = "<group>"; };
 		3F2FACA41D8FC8AE0030D493 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../View/Home.storyboard; sourceTree = "<group>"; };
 		3F2FACA61D8FC8DE0030D493 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../View/HomeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				3F2FAC961D8FBA700030D493 /* MainViewController.swift */,
 				3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */,
+				3F297C681DBA05E700F99CAA /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				3F149E631D953CBE001122F7 /* HJPageContentView.swift */,
 				3F0302A11DAB8AF7004CE976 /* CollectionNormalCell.swift */,
 				3F0302A21DAB8AF7004CE976 /* CollectionNormalCell.xib */,
+				3F297C6A1DBA156000F99CAA /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +542,8 @@
 				3F0302A31DAB8AF7004CE976 /* CollectionNormalCell.swift in Sources */,
 				3F119F471D93C34700B2AED5 /* UIBarButtonItem-Extension.swift in Sources */,
 				3F2FACA71D8FC8DE0030D493 /* HomeViewController.swift in Sources */,
+				3F297C6B1DBA156000F99CAA /* CollectionBaseCell.swift in Sources */,
+				3F297C691DBA05E700F99CAA /* BaseAnchorViewController.swift in Sources */,
 				3F149E621D950571001122F7 /* Common.swift in Sources */,
 				3F5149661DAF850C005BCA4B /* AnchorGroup.swift in Sources */,
 				3F5149641DAF80E3005BCA4B /* BaseGameModel.swift in Sources */,
