@@ -15,14 +15,17 @@ class RecommendHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
-//    var group: AnchorGroup? {
-//        
-//    }
-//    
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var group: AnchorGroup? {
+        didSet{
+            titleLabel.text = group?.tag_name
+            iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_normal")
+        }
     }
     
+}
+
+extension RecommendHeaderView{
+    class func recommendHeaderView() -> RecommendHeaderView {
+    return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! RecommendHeaderView
+    }
 }

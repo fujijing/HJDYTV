@@ -58,8 +58,9 @@
             <size key="customSize" width="253" height="162"/>
             <connections>
                 <outlet property="iconImageView" destination="SL3-dl-eEV" id="wfv-bu-jMk"/>
-                <outlet property="nickNameLabel" destination="zM4-Sp-DBI" id="w1m-Hi-kba"/>
+                <outlet property="nickNameLabel" destination="Lkq-td-JKo" id="jCi-MV-LdX"/>
                 <outlet property="onlineBtn" destination="WvZ-0z-XX8" id="b4K-yD-6i3"/>
+                <outlet property="roomNameLabel" destination="zM4-Sp-DBI" id="93n-ch-JHP"/>
             </connections>
             <point key="canvasLocation" x="-43.5" y="23"/>
         </collectionViewCell>

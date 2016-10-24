@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,14 +40,14 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ICc-oE-BA3" secondAttribute="trailing" id="2KR-tl-MZm"/>
-                <constraint firstItem="14e-hE-Jy5" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="ASk-PO-7gY" userLabel="更多 &gt;.centerY = 直播.centerY"/>
+                <constraint firstItem="14e-hE-Jy5" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" constant="2" id="ASk-PO-7gY" userLabel="更多 &gt;.centerY = 直播.centerY"/>
                 <constraint firstItem="oax-vq-pa4" firstAttribute="leading" secondItem="AVf-kw-3ej" secondAttribute="trailing" constant="15" id="Hcj-x2-6H8" userLabel="直播.leading = Image View.trailing + 5"/>
                 <constraint firstItem="AVf-kw-3ej" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="9" id="a79-CI-X67"/>
                 <constraint firstItem="AVf-kw-3ej" firstAttribute="top" secondItem="ICc-oE-BA3" secondAttribute="bottom" constant="8" symbolic="YES" id="gAs-uv-Na0" userLabel="Image View.top = View.bottom + 11"/>
                 <constraint firstItem="AVf-kw-3ej" firstAttribute="centerY" secondItem="oax-vq-pa4" secondAttribute="centerY" id="i9h-mB-qyd"/>
                 <constraint firstItem="ICc-oE-BA3" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="p0a-Ws-KD3"/>
                 <constraint firstItem="ICc-oE-BA3" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ulV-sh-87r"/>
-                <constraint firstAttribute="trailing" secondItem="14e-hE-Jy5" secondAttribute="trailing" constant="23" id="vXD-dP-gkl" userLabel="trailing = 更多 &gt;.trailing + 10"/>
+                <constraint firstAttribute="trailing" secondItem="14e-hE-Jy5" secondAttribute="trailing" id="vXD-dP-gkl" userLabel="trailing = 更多 &gt;.trailing + 10"/>
             </constraints>
             <connections>
                 <outlet property="iconImageView" destination="AVf-kw-3ej" id="HKR-cz-RuU"/>
