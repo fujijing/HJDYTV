@@ -31,6 +31,8 @@
 		3F5149681DAF8606005BCA4B /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5149671DAF8606005BCA4B /* AnchorModel.swift */; };
 		3F51496B1DAFA808005BCA4B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51496A1DAFA808005BCA4B /* BaseViewModel.swift */; };
 		3F621D601D9A4F44008438AD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */; };
+		3FEE836B1DBDECB800A78F66 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE83691DBDECB800A78F66 /* RecommendCycleView.swift */; };
+		3FEE836C1DBDECB800A78F66 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE836A1DBDECB800A78F66 /* RecommendCycleView.xib */; };
 		3FF52B7A1D8E7CF900F1EC90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */; };
 		3FF52B7F1D8E7CF900F1EC90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B7D1D8E7CF900F1EC90 /* Main.storyboard */; };
 		3FF52B811D8E7CF900F1EC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF52B801D8E7CF900F1EC90 /* Assets.xcassets */; };
@@ -76,6 +78,8 @@
 		3F5149671DAF8606005BCA4B /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		3F51496A1DAFA808005BCA4B /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3F621D5F1D9A4F44008438AD /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		3FEE83691DBDECB800A78F66 /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		3FEE836A1DBDECB800A78F66 /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		3FF52B761D8E7CF900F1EC90 /* HJDouYuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJDouYuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF52B791D8E7CF900F1EC90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF52B7E1D8E7CF900F1EC90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			children = (
 				3F3203531DAA17220049B292 /* RecommendHeaderView.swift */,
 				3F3203541DAA17220049B292 /* RecommendHeaderView.xib */,
+				3FEE83691DBDECB800A78F66 /* RecommendCycleView.swift */,
+				3FEE836A1DBDECB800A78F66 /* RecommendCycleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				TargetAttributes = {
 					3FF52B751D8E7CF900F1EC90 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8G4JHEHBFG;
 						LastSwiftMigration = 0800;
 					};
 					3FF52B891D8E7CF900F1EC90 = {
@@ -456,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEE836C1DBDECB800A78F66 /* RecommendCycleView.xib in Resources */,
 				3FF52B841D8E7CF900F1EC90 /* LaunchScreen.storyboard in Resources */,
 				3FF52B811D8E7CF900F1EC90 /* Assets.xcassets in Resources */,
 				3F0302A41DAB8AF7004CE976 /* CollectionNormalCell.xib in Resources */,
@@ -546,6 +554,7 @@
 				3F297C691DBA05E700F99CAA /* BaseAnchorViewController.swift in Sources */,
 				3F149E621D950571001122F7 /* Common.swift in Sources */,
 				3F5149661DAF850C005BCA4B /* AnchorGroup.swift in Sources */,
+				3FEE836B1DBDECB800A78F66 /* RecommendCycleView.swift in Sources */,
 				3F5149641DAF80E3005BCA4B /* BaseGameModel.swift in Sources */,
 				3F149E601D94C849001122F7 /* HJPageTitleView.swift in Sources */,
 				3F149E641D953CBE001122F7 /* HJPageContentView.swift in Sources */,
@@ -686,6 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8G4JHEHBFG;
 				INFOPLIST_FILE = HJDouYuDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -702,6 +712,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8G4JHEHBFG;
 				INFOPLIST_FILE = HJDouYuDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
